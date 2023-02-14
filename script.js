@@ -27,3 +27,44 @@ const posts = [
         likes: 152
     }
 ]
+
+const mainContainer = document.getElementById("main-container")
+
+
+// console.log(posts[0].name)
+
+function page(){
+
+for(let i = 0; i < posts.length; i++){
+    let render = posts[i]
+    mainContainer.innerHTML += `
+    <section>
+        <div class="box">
+             <img src="${render.avatar}" alt="Vincent Van Gogh avatar" class="avatar">
+            <div class="">
+                <h2>${render.name}</h2>
+                <p>${render.location}</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="post">
+            <img src="${render.post}" alt="image of Vincent van Gogh" class="post-img">
+        </div>
+    </section>
+    <section>
+        <div class="comment-container">
+            <div>
+                <img src="images/icon-heart.png" alt="heart icon"><img src="images/icon-comment.png" alt="comment icon"><img src="images/icon-dm.png" alt="dm icon">
+            </div>
+                <p><span>${render.likes}</span></p>
+                <p><span>${render.username}</span> ${render.comment}</p>
+        </div>
+    </section>`
+    
+}
+
+}
+
+
+page()
